@@ -102,7 +102,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 }
 
@@ -126,7 +126,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 
     # Failed Exit Code
@@ -170,7 +170,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add a.txt b.txt c.txt new-file-1.html new-file-2.html" ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 }
 
@@ -201,7 +201,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> --no-verify --signoff" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> --no-verify --signoff" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 }
 
@@ -234,7 +234,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=A Single Test -c user.email=single-test@github.com commit -m Commit Message --author=A Single Test <single@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=A Single Test -c user.email=single-test@github.com commit -m Commit Message --author=A Single Test <single@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 }
 
@@ -268,7 +268,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com tag -a v1.0.0 -m v1.0.0" ]
     [ "${capture[6]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 
@@ -304,7 +304,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags --force" ]
 
 }
@@ -337,7 +337,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout -b --progress master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 
 }
@@ -380,7 +380,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout foo --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:foo --tags" ]
 
 }
@@ -423,7 +423,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push origin" ]
 }
 
@@ -466,7 +466,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com tag -a v2.0.0 -m v2.0.0" ]
     [ "${capture[6]}" = "git-stub push origin --tags" ]
 
