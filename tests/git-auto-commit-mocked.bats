@@ -89,7 +89,7 @@ main() {
     [ "${lines[3]}" = "INPUT_FILE_PATTERN: ." ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: " ]
     [ "${lines[5]}" = "::debug::Apply commit options " ]
-    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: " ]
     [ "${lines[8]}" = "No tagging message supplied. No tag will be added." ]
     [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: " ]
@@ -126,7 +126,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 
     # Failed Exit Code
@@ -170,7 +170,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add a.txt b.txt c.txt new-file-1.html new-file-2.html" ]
-    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 }
 
@@ -194,7 +194,7 @@ main() {
     # Success Exit Code
     [ "$status" = 0 ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: --no-verify --signoff" ]
-    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> --no-verify --signoff;" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> --no-verify --signoff" ]
     [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
 
     shellmock_verify
@@ -202,7 +202,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> --no-verify --signoff" ]
+    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> --no-verify --signoff" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 }
 
@@ -228,7 +228,7 @@ main() {
     # Success Exit Code
     [ "$status" = 0 ]
 
-    [ "${lines[6]}" = "git -c user.name=A Single Test -c user.email=single-test@github.com commit -m Commit Message --author=A Single Test <single@users.noreply.github.com> ;" ]
+    [ "${lines[6]}" = "git -c user.name=A Single Test -c user.email=single-test@github.com commit -m Commit Message --author=A Single Test <single@users.noreply.github.com>" ]
     [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
 
     shellmock_verify
@@ -236,7 +236,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    # [ "${capture[4]}" = "git-stub -c user.name=A Single Test -c user.email=single-test@github.com commit -m Commit Message --author=A Single Test <single@users.noreply.github.com>" ]
+    [ "${capture[4]}" = "git-stub -c user.name=A Single Test -c user.email=single-test@github.com commit -m Commit Message --author=A Single Test <single@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 }
 
@@ -260,7 +260,7 @@ main() {
     # Success Exit Code
     [ "$status" = 0 ]
 
-    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: v1.0.0" ]
     [ "${lines[8]}" = "::debug::Create tag v1.0.0" ]
     [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
@@ -271,7 +271,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com tag -a v1.0.0 -m v1.0.0" ]
     [ "${capture[6]}" = "git-stub push --set-upstream origin HEAD:master --tags" ]
 
@@ -297,7 +297,7 @@ main() {
     # Success Exit Code
     [ "$status" = 0 ]
 
-    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: --force" ]
     [ "${lines[10]}" = "::debug::Apply push options --force" ]
     [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
@@ -308,7 +308,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout master --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:master --tags --force" ]
 
 }
@@ -339,7 +339,7 @@ main() {
     [ "${lines[3]}" = "INPUT_FILE_PATTERN: ." ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: " ]
     [ "${lines[5]}" = "::debug::Apply commit options " ]
-    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: " ]
     [ "${lines[8]}" = "No tagging message supplied. No tag will be added." ]
     [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: " ]
@@ -352,7 +352,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout foo --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push --set-upstream origin HEAD:foo --tags" ]
 
 }
@@ -383,7 +383,7 @@ main() {
     [ "${lines[3]}" = "INPUT_FILE_PATTERN: ." ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: " ]
     [ "${lines[5]}" = "::debug::Apply commit options " ]
-    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: " ]
     [ "${lines[8]}" = "No tagging message supplied. No tag will be added." ]
     [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: " ]
@@ -396,7 +396,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub push origin" ]
 }
 
@@ -427,7 +427,7 @@ main() {
     [ "${lines[3]}" = "INPUT_FILE_PATTERN: ." ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: " ]
     [ "${lines[5]}" = "::debug::Apply commit options " ]
-    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: v2.0.0" ]
     [ "${lines[8]}" = "::debug::Create tag v2.0.0" ]
     [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: " ]
@@ -440,7 +440,7 @@ main() {
     [ "${capture[1]}" = "git-stub fetch" ]
     [ "${capture[2]}" = "git-stub checkout --" ]
     [ "${capture[3]}" = "git-stub add ." ]
-    # [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
+    [ "${capture[4]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com>" ]
     [ "${capture[5]}" = "git-stub -c user.name=Test Suite -c user.email=test@github.com tag -a v2.0.0 -m v2.0.0" ]
     [ "${capture[6]}" = "git-stub push origin --tags" ]
 
