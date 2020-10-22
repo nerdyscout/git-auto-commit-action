@@ -89,11 +89,12 @@ main() {
     [ "${lines[3]}" = "INPUT_FILE_PATTERN: ." ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: " ]
     [ "${lines[5]}" = "::debug::Apply commit options " ]
-    [ "${lines[6]}" = "INPUT_TAGGING_MESSAGE: " ]
-    [ "${lines[7]}" = "No tagging message supplied. No tag will be added." ]
-    [ "${lines[8]}" = "INPUT_PUSH_OPTIONS: " ]
-    [ "${lines[9]}" = "::debug::Apply push options " ]
-    [ "${lines[10]}" = "::debug::Push commit to remote branch master" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: " ]
+    [ "${lines[8]}" = "No tagging message supplied. No tag will be added." ]
+    [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: " ]
+    [ "${lines[10]}" = "::debug::Apply push options " ]
+    [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
 
 
     shellmock_verify
@@ -161,7 +162,7 @@ main() {
     [ "$status" = 0 ]
 
     [ "${lines[3]}" = "INPUT_FILE_PATTERN: *.txt *.html" ]
-    [ "${lines[10]}" = "::debug::Push commit to remote branch master" ]
+    [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
 
 
     shellmock_verify
@@ -193,7 +194,8 @@ main() {
     # Success Exit Code
     [ "$status" = 0 ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: --no-verify --signoff" ]
-    [ "${lines[10]}" = "::debug::Push commit to remote branch master" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> --no-verify --signoff;" ]
+    [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
 
     shellmock_verify
     [ "${capture[0]}" = "git-stub status -s -- ." ]
@@ -226,7 +228,8 @@ main() {
     # Success Exit Code
     [ "$status" = 0 ]
 
-    [ "${lines[10]}" = "::debug::Push commit to remote branch master" ]
+    [ "${lines[6]}" = "git -c user.name=A Single Test -c user.email=single-test@github.com commit -m Commit Message --author=A Single Test <single@users.noreply.github.com> ;" ]
+    [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
 
     shellmock_verify
     [ "${capture[0]}" = "git-stub status -s -- ." ]
@@ -257,9 +260,10 @@ main() {
     # Success Exit Code
     [ "$status" = 0 ]
 
-    [ "${lines[6]}" = "INPUT_TAGGING_MESSAGE: v1.0.0" ]
-    [ "${lines[7]}" = "::debug::Create tag v1.0.0" ]
-    [ "${lines[10]}" = "::debug::Push commit to remote branch master" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: v1.0.0" ]
+    [ "${lines[8]}" = "::debug::Create tag v1.0.0" ]
+    [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
 
 
     shellmock_verify
@@ -293,9 +297,10 @@ main() {
     # Success Exit Code
     [ "$status" = 0 ]
 
-    [ "${lines[8]}" = "INPUT_PUSH_OPTIONS: --force" ]
-    [ "${lines[9]}" = "::debug::Apply push options --force" ]
-    [ "${lines[10]}" = "::debug::Push commit to remote branch master" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: --force" ]
+    [ "${lines[10]}" = "::debug::Apply push options --force" ]
+    [ "${lines[11]}" = "::debug::Push commit to remote branch master" ]
 
 
     shellmock_verify
@@ -334,11 +339,12 @@ main() {
     [ "${lines[3]}" = "INPUT_FILE_PATTERN: ." ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: " ]
     [ "${lines[5]}" = "::debug::Apply commit options " ]
-    [ "${lines[6]}" = "INPUT_TAGGING_MESSAGE: " ]
-    [ "${lines[7]}" = "No tagging message supplied. No tag will be added." ]
-    [ "${lines[8]}" = "INPUT_PUSH_OPTIONS: " ]
-    [ "${lines[9]}" = "::debug::Apply push options " ]
-    [ "${lines[10]}" = "::debug::Push commit to remote branch foo" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: " ]
+    [ "${lines[8]}" = "No tagging message supplied. No tag will be added." ]
+    [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: " ]
+    [ "${lines[10]}" = "::debug::Apply push options " ]
+    [ "${lines[11]}" = "::debug::Push commit to remote branch foo" ]
 
 
     shellmock_verify
@@ -377,11 +383,12 @@ main() {
     [ "${lines[3]}" = "INPUT_FILE_PATTERN: ." ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: " ]
     [ "${lines[5]}" = "::debug::Apply commit options " ]
-    [ "${lines[6]}" = "INPUT_TAGGING_MESSAGE: " ]
-    [ "${lines[7]}" = "No tagging message supplied. No tag will be added." ]
-    [ "${lines[8]}" = "INPUT_PUSH_OPTIONS: " ]
-    [ "${lines[9]}" = "::debug::Apply push options " ]
-    [ "${lines[10]}" = "::debug::git push origin" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: " ]
+    [ "${lines[8]}" = "No tagging message supplied. No tag will be added." ]
+    [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: " ]
+    [ "${lines[10]}" = "::debug::Apply push options " ]
+    [ "${lines[11]}" = "::debug::git push origin" ]
 
 
     shellmock_verify
@@ -420,11 +427,12 @@ main() {
     [ "${lines[3]}" = "INPUT_FILE_PATTERN: ." ]
     [ "${lines[4]}" = "INPUT_COMMIT_OPTIONS: " ]
     [ "${lines[5]}" = "::debug::Apply commit options " ]
-    [ "${lines[6]}" = "INPUT_TAGGING_MESSAGE: v2.0.0" ]
-    [ "${lines[7]}" = "::debug::Create tag v2.0.0" ]
-    [ "${lines[8]}" = "INPUT_PUSH_OPTIONS: " ]
-    [ "${lines[9]}" = "::debug::Apply push options " ]
-    [ "${lines[10]}" = "::debug::git push origin --tags" ]
+    [ "${lines[6]}" = "git -c user.name=Test Suite -c user.email=test@github.com commit -m Commit Message --author=Test Suite <test@users.noreply.github.com> ;" ]
+    [ "${lines[7]}" = "INPUT_TAGGING_MESSAGE: v2.0.0" ]
+    [ "${lines[8]}" = "::debug::Create tag v2.0.0" ]
+    [ "${lines[9]}" = "INPUT_PUSH_OPTIONS: " ]
+    [ "${lines[10]}" = "::debug::Apply push options " ]
+    [ "${lines[11]}" = "::debug::git push origin --tags" ]
 
 
     shellmock_verify
